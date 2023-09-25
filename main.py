@@ -1,0 +1,2 @@
+xx = 'xxzx'
+print(xx)

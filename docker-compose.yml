@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  mlzoomcamp:
+    image: python3_8-anaconda
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: 'mlzoomcamp'
+    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 main.py "]
+    volumes:
+      - .:/app
+      
